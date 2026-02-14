@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dahami… Will You Be My Valentine? 💕</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Quicksand:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Background -->
+  <div class="bg-gradient"></div>
+
+  <div class="bg-shapes">
+    <div class="shape shape-1"></div>
+    <div class="shape shape-2"></div>
+    <div class="shape shape-3"></div>
+    <div class="shape shape-4"></div>
+  </div>
+
+  <!-- Floating canvas hearts -->
+  <canvas id="heartCanvas"></canvas>
+
+  <!-- Sparkles -->
+  <div class="sparkle-container" id="sparkleContainer"></div>
+
+  <!-- MUSIC BUTTON -->
+  <button class="music-btn" id="musicBtn" aria-label="Toggle music">
+    <span class="music-pulse"></span>
+    <span class="music-icon">🎵</span>
+  </button>
+
+  <!-- BACKGROUND MUSIC (ONLY ONE AUDIO TAG) -->
+  <audio id="bgMusic" loop preload="auto" muted>
+    <source src="assets/media/mmm.mp3" type="audio/mpeg" />
+  </audio>
+
+  <!-- APP -->
+  <main id="app">
+
+    <!-- PAGE 1 -->
+    <section id="page1" class="page active">
+      <div class="page-content">
+        <div class="floating-hearts">
+          <span class="float-heart">💕</span>
+          <span class="float-heart">💗</span>
+          <span class="float-heart">💖</span>
+        </div>
+
+        <div class="glass-card main-card">
+          <div class="card-glow"></div>
+
+          <h1 class="title-main" id="mainQuestion">
+            Dahami… will you be my Valentine? 💕
+          </h1>
+
+          <p class="subtitle" id="subQuestion">
+            Malli Baba is asking… please say YES 😚
+          </p>
+
+          <div class="button-group">
+            <button id="yesBtn" class="btn btn-yes">
+              <span class="btn-text">YES 💗</span>
+              <span class="btn-shine"></span>
+            </button>
+
+            <button id="noBtn" class="btn btn-no">
+              <span class="btn-text">NO 🙈</span>
+            </button>
+          </div>
+
+          <p id="noEscapeText" class="escape-text hidden"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 2 -->
+    <section id="page2" class="page">
+      <div class="page-content">
+        <div class="glass-card">
+          <div class="card-glow"></div>
+
+          <div class="emoji-bounce">🎉</div>
+
+          <h1 class="title-cursive" id="confirmTitle">
+            YAAAY Dahami! 💖
+          </h1>
+
+          <div class="confirmation-box">
+            <p id="confirmText">From today, you are officially…</p>
+            <div class="badge">
+              <span class="badge-text">Malli Baba’s Valentine 💘</span>
+            </div>
+          </div>
+
+          <div class="button-group">
+            <button id="nextToPage3" class="btn btn-primary">
+              <span class="btn-text">Next</span>
+              <span class="btn-shine"></span>
+            </button>
+
+            <button id="backToPage1" class="btn btn-ghost btn-small">
+              Ask again
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 3 -->
+    <section id="page3" class="page">
+      <div class="page-content flower-page">
+        <div class="falling-petals" id="petalsContainer"></div>
+
+        <div class="glass-card">
+          <div class="card-glow"></div>
+
+          <h1 class="title-cursive" id="flowerTitle">
+            A special gift for you, Moda Kella 🌸
+          </h1>
+
+          <div class="bouquet-wrapper">
+            <div class="bouquet-glow"></div>
+
+            <div class="bouquet" id="bouquet">
+              <img
+                src="assets/media/gift-before.gif"
+                alt="Special Gift"
+                class="bouquet-img gift-gif"
+                id="giftBefore"
+              />
+              <img
+                src="assets/media/gift-after.gif"
+                alt="Gift Taken"
+                class="bouquet-img gift-gif hidden"
+                id="giftAfter"
+              />
+            </div>
+          </div>
+
+          <p id="bouquetMessage" class="bouquet-message hidden">
+            It’s yours now, Modakella 💕
+          </p>
+
+          <div class="button-group">
+            <button id="takeBouquet" class="btn btn-primary">
+              <span class="btn-text">Take my gift 🎁</span>
+              <span class="btn-shine"></span>
+            </button>
+
+            <button id="nextToPage4" class="btn btn-primary hidden">
+              <span class="btn-text">Next</span>
+              <span class="btn-shine"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 4 COLLAGE -->
+    <section id="page4" class="page">
+      <div class="page-content">
+        <div class="glass-card collage-card">
+          <div class="card-glow"></div>
+
+          <h1 class="title-cursive" id="collageTitle">My Beautiful Dahami 💞</h1>
+
+          <p class="collage-subtitle" id="collageSubtitle">
+            Since you came into my life, even simple moments feel special.
+            Happy Valentine, my favorite person. 💕
+          </p>
+
+          <div class="photo-grid">
+            <div class="photo-item"><img src="assets/media/22.jpg" class="photo-preview" /></div>
+            <div class="photo-item"><img src="assets/media/44.jpg" class="photo-preview" /></div>
+            <div class="photo-item"><img src="assets/media/222.jpg" class="photo-preview" /></div>
+            <div class="photo-item"><img src="assets/media/33.jpg" class="photo-preview" /></div>
+          </div>
+
+          <button id="nextToPage6" class="btn btn-primary">
+            <span class="btn-text">One more page…</span>
+            <span class="btn-shine"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 6 MEDIA MIX (LANDSCAPE AREA) -->
+    <section id="page6" class="page">
+      <div class="page-content page6-content">
+        <div class="glass-card collage-card page6-card">
+          <div class="card-glow"></div>
+
+          <h1 class="title-cursive">Our Memories 💖</h1>
+          <p class="collage-subtitle">Videos in center + photos looping around (no crop).</p>
+
+          <!-- ✅ Square ring (26 images) + Centered 6 videos -->
+          <div class="square-ring-stage" id="squareRingStage">
+            <div class="square-ring" id="squareRing" aria-hidden="true"></div>
+
+            <div class="center-videos" id="centerVideos">
+              <video class="center-video" autoplay muted loop playsinline preload="metadata">
+                <source src="assets/media/video1.mp4" type="video/mp4" />
+              </video>
+              <video class="center-video" autoplay muted loop playsinline preload="metadata">
+                <source src="assets/media/video2.mp4" type="video/mp4" />
+              </video>
+              <video class="center-video" autoplay muted loop playsinline preload="metadata">
+                <source src="assets/media/video3.mp4" type="video/mp4" />
+              </video>
+              <video class="center-video" autoplay muted loop playsinline preload="metadata">
+                <source src="assets/media/video4.mp4" type="video/mp4" />
+              </video>
+              <video class="center-video" autoplay muted loop playsinline preload="metadata">
+                <source src="assets/media/video5.mp4" type="video/mp4" />
+              </video>
+              <video class="center-video" autoplay muted loop playsinline preload="metadata">
+                <source src="assets/media/video6.mp4" type="video/mp4" />
+              </video>
+            </div>
+          </div>
+
+          <!-- Keep old containers (hidden) so nothing else breaks -->
+          <div class="video-sequence hidden">
+            <video id="sequenceVideo" muted playsinline preload="metadata"></video>
+            <div class="video-seq-label" id="videoSeqLabel">Playing video 1 / 6</div>
+          </div>
+          <div class="masonry-landscape hidden" id="masonryGrid"></div>
+
+          <button id="nextToPage5" class="btn btn-primary">
+            <span class="btn-text">Open your letter 💌</span>
+            <span class="btn-shine"></span>
+          </button>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PAGE 5 FINAL (Envelope + Message) -->
+    <section id="page5" class="page">
+      <div class="page-content">
+        <div id="confettiContainer" class="confetti-container"></div>
+
+        <div class="envelope-wrapper" id="envelopeWrapper">
+          <div class="envelope-container">
+            <div class="envelope" id="envelope">
+              <div class="envelope-back"></div>
+
+              <div class="letter">
+                <div class="letter-content">💕 For Dahami 💕</div>
+              </div>
+
+              <div class="envelope-front"></div>
+              <div class="envelope-flap"></div>
+            </div>
+          </div>
+
+          <p class="envelope-hint" id="envelopeHint">Tap to open</p>
+        </div>
+
+        <div class="glass-card final-card hidden" id="finalContent">
+          <div class="final-emoji">💞</div>
+
+          <h1 class="title-cursive title-final" id="finalTitle">
+            Happy Valentine, Dahami 💞
+          </h1>
+
+          <div class="message-box">
+            <p id="finalMessage"></p>
+          </div>
+
+          <div class="button-group final-buttons">
+            <button id="restartBtn" class="btn btn-ghost">Restart</button>
+            <button id="copyBtn" class="btn btn-primary">Copy Message</button>
+          </div>
+
+          <p id="copyNotif" class="copy-notif hidden">Message copied! 💗</p>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
